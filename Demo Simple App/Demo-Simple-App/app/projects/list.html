@@ -1,0 +1,31 @@
+<div class="form-group row">
+  <div class="col-sm-6">
+    <input type="text" ng-model="projectList.search" class="search-query form-control" id="projects_search" placeholder="Search">
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Description</th>
+      <th>
+        <a class="text-info" href="new">
+          <i class="fas fa-plus"></i>
+        </a>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:'name'">
+      <td>
+        <a class="text-info" ng-href="{{project.site}}" target="_blank">{{project.name}}</a>
+      </td>
+      <td>{{project.description}}</td>
+      <td>
+        <a class="text-info" ng-href="edit/{{project.$id}}">
+          <i class="fas fa-edit"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
