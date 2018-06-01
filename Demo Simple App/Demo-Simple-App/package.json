@@ -15,7 +15,8 @@
     "angular": "^1.7.0",
     "angular-resource": "^1.7.0",
     "angular-route": "^1.7.0",
-    "bootstrap": "^4.1.1"
+    "bootstrap": "^4.1.1",
+    "highcharts": "^6.1.0"
   },
   "devDependencies": {
     "lite-server": "^2.3.0"

@@ -18,17 +18,26 @@
   <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
   <script src="/node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
 
+  <!-- modules and other things (component, controller,...) have to put on a right order to let it work 
+    (modules first with parents module at the bottom and other things follow by parents) -->
   <script src="/app/projects/projects.module.js"></script>
   <script src="/app/common/components/greet-user/greet-user.module.js"></script>
+  <script src="/app/ui-router/ui-router.module.js"></script>
   <script src="/app/app.module.js"></script>
-  
+
   <script src="/app/projects/project.js"></script>
   <script src="/app/projects/project-list.js"></script>
   <script src="/app/common/components/greet-user/greet-user.component.js"></script>
   <script src="/app/data-binding/hello-world.js"></script>
-  <!-- <script src="/app/route-example/route-example.controller.js"></script>
-  <script src="/app/route-example/route-example.module.js"></script> -->
+  <script src="/app/route-example/route-example.controller.js"></script>
+  <script src="/app/route-example/route-example.module.js"></script>
   <script src="/app/ui-router/ui-router.js"></script>
+  <script src="/app/ui-router/person.component.js"></script>
+  <script src="/app/ui-router/people.service.js"></script>
+  <script src="/app/ui-router/people.component.js"></script>
+  <script src="/app/ui-router/hello.component.js"></script>
+  <script src="/app/ui-router/about.component.js"></script>
+  <script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>
 </head>
 
 <body ng-app='app'>
@@ -79,9 +88,21 @@
       <h2>UI Router</h2>
     </div>
     <div class="card-body">
-      <a class="text-info" ui-sref="hello" ui-sref-active="active">Hello</a>
-      <a class="text-info" ui-sref="about" ui-sref-active="active">About</a>
+      <div>
+        <button class="btn btn-light" onClick="document.location.reload(true)">reload plunker (without changing the url)</button>
+      </div>
+    
+      <a class="text-info" ui-sref="hello">Hello</a>
+      <a class="text-info" ui-sref="about">About</a>
+      <a class="text-info" ui-sref="people">People</a>
+    
       <ui-view></ui-view>
+    </div>
+  </div>
+
+  <div class="card text-white bg-dark mb-3">
+    <div class="card-header">
+      <h2>&nbsp;</h2>
     </div>
   </div>
 

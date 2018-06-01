@@ -1,0 +1,13 @@
+angular.module('demo-ui-router').component('people', {
+    bindings: { people: '<' },
+    
+    template: '<h3>Some people:</h3>' +
+              '<ul>' +
+              '  <li ng-repeat="person in $ctrl.people">' +
+              '    <a class="text-info" ui-sref="people.person({ personId: person.id })">' +
+              '      {{person.name}}' +
+              '    </a>' +
+              '  </li>' +
+              '</ul>' +
+              '<ui-view></ui-view>'
+  })

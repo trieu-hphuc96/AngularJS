@@ -1,1 +1,1 @@
-angular.module('app', ['ui.router','projects', 'firebase','greet-user'])
+angular.module('app', ['demo-ui-router', 'firebase','greet-user'])
